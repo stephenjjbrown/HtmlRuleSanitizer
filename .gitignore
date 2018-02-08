@@ -10,3 +10,5 @@
 /Nuget/lib/*.dll
 /.vs
 /packages
+/HtmlSanitizer.IsolatorCache.user
+/Web.HtmlSanitizer.Tests/app.config

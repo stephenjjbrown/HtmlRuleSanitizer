@@ -12,8 +12,8 @@ namespace Vereyon.Web
         public static void Main(string[] args)
         {
 
-            AppDomain.CurrentDomain.ExecuteAssembly(@"..\..\..\..\packages\xunit.runners.1.9.2\tools\xunit.console.clr4.exe",
-                new string[] { Assembly.GetExecutingAssembly().Location });
+            //AppDomain.CurrentDomain.ExecuteAssembly(@"..\..\..\..\packages\xunit.runners.1.9.2\tools\xunit.console.clr4.exe",
+            //    new string[] { Assembly.GetExecutingAssembly().Location });
         }
     }
 }

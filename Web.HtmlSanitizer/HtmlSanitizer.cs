@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Web;
 using HtmlAgilityPack;
 
 namespace Vereyon.Web
@@ -185,10 +186,10 @@ namespace Vereyon.Web
                 // in the complete text.
                 if (node.NodeType == HtmlNodeType.Text && EncodeHtmlEntities)
                 {
-                    var deentitized = WebUtility.HtmlDecode(node.InnerText);
+                    var deentitized = HttpUtility.HtmlDecode(node.InnerText);
 
                     // Unfortunately also unicode characters are encoded, which is not really necessary.
-                    var entitized = WebUtility.HtmlEncode(deentitized);
+                    var entitized = HttpUtility.HtmlEncode(deentitized);
                     var replacement = HtmlTextNode.CreateNode(entitized);
                     node.ParentNode.ReplaceChild(replacement, node);
                     return;
@@ -397,7 +398,7 @@ namespace Vereyon.Web
             {
 
                 // No empty or white space classes.
-                if (string.IsNullOrWhiteSpace(cssClass))
+                if (StringUtility.IsNullOrWhiteSpace(cssClass))
                     continue;
 
                 // Only allowed classes.
